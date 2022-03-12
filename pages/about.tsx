@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       date: new Date().toISOString(),
@@ -17,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const About = ({ date }: { id: string }) => {
+const About = ({ date }: { date: string }) => {
   return (
     <div>
       <Head>
