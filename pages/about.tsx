@@ -10,13 +10,6 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true,
-  };
-};
-
 const About = ({ date }: { date: string }) => {
   return (
     <div>
