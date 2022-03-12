@@ -1,7 +1,23 @@
-import type { NextPage } from "next";
 import Head from "next/head";
+import { GetStaticProps, GetStaticPaths } from "next";
 
-const About: NextPage = () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  return {
+    props: {
+      date: new Date().toISOString(),
+    },
+    revalidate: 3600,
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: true,
+  };
+};
+
+const About = ({ date }: { id: string }) => {
   return (
     <div>
       <Head>
@@ -11,7 +27,7 @@ const About: NextPage = () => {
       </Head>
 
       <main>
-        <h1>About Page!</h1>
+        <h1>About Page, timestamp: {date}.</h1>
       </main>
     </div>
   );
