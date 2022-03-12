@@ -2,14 +2,16 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 export const getStaticProps: GetStaticProps = async () => {
+  const now = new Date().toISOString();
+  console.log("getStaticProps", now);
   return {
     props: {
-      date: new Date().toISOString(),
+      now,
     },
   };
 };
 
-const About = ({ date }: { date: string }) => {
+const About = ({ now }: { now: string }) => {
   return (
     <div>
       <Head>
@@ -19,7 +21,7 @@ const About = ({ date }: { date: string }) => {
       </Head>
 
       <main>
-        <h1>About Page, timestamp: {date}.</h1>
+        <h1>About Page, timestamp: {now}.</h1>
       </main>
     </div>
   );
