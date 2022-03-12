@@ -9,11 +9,9 @@ const revalidate = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     if (path.length > 0) {
-      console.time("revalidate");
-      const p1 = res.unstable_revalidate("/");
-      const p2 = res.unstable_revalidate(`/${path}`);
-      await Promise.all([p1, p2]);
-      console.timeEnd("revalidate");
+      //const p1 = res.unstable_revalidate("/");
+      //const p2 = res.unstable_revalidate(`/${path}`);
+      //await Promise.all([p1, p2]);
     } else {
       await res.unstable_revalidate("/");
     }
