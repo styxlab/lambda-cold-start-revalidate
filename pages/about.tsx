@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async () => {
   const now = new Date().toISOString();
